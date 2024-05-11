@@ -26,7 +26,7 @@
   <div class="under-development">Under Development</div>
   <div id="countdown" style="font-weight: bold; margin-top: 20px;"></div>
   <script>
-    var countDownDate = new Date("May 20, 2024 00:00:00").getTime();
+    var countDownDate = new Date("May 25, 2024 00:00:00").getTime();
     var x = setInterval(function(){
       var now = new Date().getTime();
       var distance = countDownDate - now;
@@ -34,7 +34,7 @@
       var hours = Math.floor((distance %(1000 * 60 * 60 * 24)) /(1000 * 60 * 60));
       var minutes = Math.floor((distance %(1000 * 60 * 60)) /(1000 * 60));
       var seconds = Math.floor((distance %(1000 * 60)) / 1000);
-      document.getElementById("countdown").innerHTML =(days<10?'0'+days:days) + " Day " +(hours<10?'0'+hours:hourse) + " Hours "
+      document.getElementById("countdown").innerHTML =(days<10?'0'+days:days) + " Day " +(hours<10?'0'+hours:hours) + " Hours "
       +(minutes<10?'0'+minutes:minutes) + " Minutes " +(seconds<10?'0'+seconds:seconds) + " Second ";
       if(distance < 0){
         clearInterval(x);
