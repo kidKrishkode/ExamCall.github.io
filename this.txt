@@ -1,0 +1,766 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <meta name="description" content="Welcome to Exam Call, a open source and free Exam conduct system provided by kidKrishkode for public use, Our exam system is completely free and designed to be accessible to everyone, with no need for any monetary transactions.">
+    <meta name="author" contant="Krishnendu Mitra"/>
+    <meta name="keywords" content="kidKrishkode, Exam Call, exam call, github, exam, krishnendu mitra, call of exam, free, open source, exam pannel, ECS" lang="en-us"/>
+    <meta name="og:image" property="og:image" content="./fav-icon/logo-m-o-c.png" href="./fav-icon/logo-m-o-c.png"/>
+    <title version="1.0">Exam Call</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="icon" href="./fav-icon/logo-m-o-c.png"/>
+    <link rel="stylesheet" href="./Component/origin.css"/>
+</head>
+<style>
+:root{
+    --bg-color: #fff;
+    --section-color: #a49cd195;
+    --main1-color: #4d4963;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+    background: var(--bg-color);
+    transition: 1s ease-in-out;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+.bg-red{
+    background: #dc3545;
+}
+.bg-green{
+    background: #20c997;
+}
+.bg-yellow{
+    background: #ffc107;
+}
+.bg-white{
+    background: #fff;
+}
+.col-grn{
+    color: green;
+}
+.col-red{
+    color: #dc3545;
+}
+.flx{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.navbar-dark .navbar-brand{
+    font-size: 1rem;
+}
+.component .left-component{
+    width: 80%;
+    transition: 1s ease-in-out;
+}
+.component .left-component .long-section{
+    background: var(--section-color);
+    padding: 6px 4px;
+    font-size: 14px;
+    font-family: sans-serif;
+    border-top: 1px solid purple;
+    border-bottom: 1px solid purple;
+    display: flex;
+    flex-direction: row;
+}
+.component .left-component .long-section #category-list{
+    padding-left: 20px;
+    max-width: 90%;
+    max-height: 25px;
+    overflow: hidden;
+}
+.component .left-component .long-section #category-list .btn{
+    color: #000;
+    width: 75px;
+    font-size: 12px;
+    padding: .175rem .35rem;
+    margin-right: 10px;
+    text-transform: capitalize;
+    transition: 1s ease-in-out;
+}
+.component .left-component .long-section #category-list .btn.active{
+    background: var(--main1-color);
+    color: #fff;
+}
+.left-component .question-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px;
+    border-bottom: 1px solid purple;
+}
+.left-component .question-header .qh-component .btn{
+    font-size: 12px;
+    padding: .175rem .35rem;
+    background: var(--section-color);
+    color: var(--main1-color);
+    font-weight: 600;
+    margin: 0px 2px;
+}
+.left-component .question-header .qh-component .btn-primary{
+    background: #0c8ff9;
+    color: #fff;
+    display: none;
+}
+.left-component .question-area{
+    width: 100%;
+    height: 600px;
+    max-height: 600px;
+    padding: 4px 10px;
+    overflow: auto;
+}
+.left-component .question-area .question{
+    font-family: sans-serif;
+    font-size: 15px;
+    color: var(--main1-color);
+    margin-top: 10px;
+}
+.left-component .question-area .options{
+    margin: 40px 0px 4px 0px;
+    padding: 2px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.left-component .question-area .options .option{
+    width: 50%;
+}
+.component .right-component{
+    width: 20%;
+    height: 100vh;
+    background: #b3aae33f;
+    transition: 1s ease-in-out;
+}
+.component .right-component .user-identiy-box{
+    background: var(--main1-color);
+    padding: 20px 0px;
+    overflow: hidden;
+}
+.component .right-component .user-identiy-box .user-dp{
+    background-image: url('../img/avater-7.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0px auto;
+}
+.component .right-component .user-identiy-box .user-name{
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    font-family: sans-serif;
+}
+.component .right-component .user-identiy-box .visiting-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-top: 10px;
+    padding: 0px 4px;
+}
+.component .right-component .user-identiy-box .visiting-box .visit{
+    width: 20px;
+    height: 20px;
+    margin: auto 4px;
+}
+.component .right-component .user-identiy-box .visiting-box .flx{
+    font-size: 14px;
+    color: #fff;
+    width: 140px;
+    margin-bottom: 8px;
+}
+.component .right-component .user-identiy-box .visiting-box .flx span{
+    width: calc(140px - 24px);
+}
+.component .right-component .side-section{
+    background: var(--section-color);
+    padding: 8px 4px;
+    overflow: hidden;
+}
+.component .right-component .question-list{
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
+    padding: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: auto;
+}
+.component .right-component .question-list .question-item{
+    width: 30px;
+    height: 26px;
+    text-align: center;
+    border: 1px solid var(--main1-color);
+    margin: 10px;
+    padding: 0px;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+.component .right-component .question-list .question-item:hover{
+    border-radius: 10px;
+}
+.component .right-component .instruction-footer{
+    text-align: center;
+    padding-top: 20px;
+    overflow: hidden;
+}
+.component .right-component .sidenav-toggler{
+    position: absolute;
+    top: 58%;
+    left: 78%;
+    font-size: 20px;
+    background: blueviolet;
+    width: min-content;
+    padding: 4px 8px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+.alert{
+    position: absolute;
+    top: -8%;
+    left: 20%;
+    width: 60%;
+    display: none;
+    transition: 1s ease-in-out;
+}
+.alert .close{
+    outline: none;
+}
+@media only screen and (max-width: 900px), only screen and (max-width: 1028px){
+    .component .right-component{
+        position: absolute;
+        top: 0%;
+        right: 0px;
+        z-index: 99;
+    }
+    .component .right-component .question-list{
+        height: 300px;
+    }
+    .component .right-component .sidenav-toggler{
+        position: absolute;
+        top: 58%;
+        left: -10%;
+    }
+    .component .left-component{
+        width: 100%;
+    }
+    .left-component .question-header{
+        display: flex;
+        flex-direction: column;
+    }
+    .left-component .question-header .qh-component .btn{
+        font-size: 10px;
+        font-weight: 600;
+    }
+}
+</style>
+<style id="jsStyle"></style>
+<body id="root" onload="user();">
+    <section id="mainPage">
+        <div class="component" id="navBar">
+            <header>
+                <nav class="navbar navbar-dark bg-dark">
+                    <a class="navbar-brand" href="./index.html">
+                       <img src="./fav-icon/logo-m-o-c.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+                        {paper.name}
+                    </a>
+                    <button class="navbar-toggler btn btn-secondary">
+                        Time Left: 02:18:34
+                    </button>
+                    <button class="btn btn-secondary">Cancel Exam</button>
+                </nav>
+            </header>
+        </div>
+        <div class="component flx" id="field">
+            <div class="left-component">
+                <div class="long-section">
+                    Sections |
+                    <span id="category-list">
+                        loading..
+                    </span>
+                </div>
+                <div class="question-header">
+                    <div class="qh-component">Question <span id="qno">{question.no}</span>:</div>
+                    <div class="qh-component flx">
+                        <div class="btn">Full Marks: {question.fullmarks}</div>
+                        <div class="btn">Time: {question.time}</div>
+                        <div class="btn">Marks: <span class="col-grn" id="positive-marks" title="Positive Marks of this Question">{question.marks.positive}</span>, <span class="col-red" id="negative-marks" title="Negative Marks of this Question">{question.marks.negative}</span></div>
+                        <div class="btn text-muted"><i class="fa fa-circle"></i> Report Issue</div>
+                        <div class="btn btn-primary" id="finish"><i class="fa fa-save"></i> Save & Finish</div>
+                    </div>
+                </div>
+                <div class="question-area">
+                    <div class="question">
+                        loading..
+                    </div>
+                    <div class="options">
+                        loading..
+                    </div>
+                </div>
+            </div>
+            <div class="right-component">
+                <div class="user-identiy-box">
+                    <div class="user-dp"></div>
+                    <div class="user-name">{student.name}</div>
+                    <div class="visiting-box">
+                        <div class="flx">
+                            <div class="visit bg-green"></div>
+                            <span>Attempted</span>
+                        </div>
+                        <div class="flx">
+                            <div class="visit bg-red"></div>
+                            <span>Not Answered</span>
+                        </div>
+                        <div class="flx">
+                            <div class="visit bg-white"></div>
+                            <span>Not Visited</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-section">
+                    <b>Section: </b><span id="side-cateno">{category.no}</span>
+                </div>
+                <div class="question-list"></div>
+                <div class="instruction-footer">
+                    <div class="btn btn-secondary">Instructions</div>
+                </div>
+                <div class="sidenav-toggler" onclick="toggleSidenav();">
+                    <i class="fa fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <i class="fa fa-warning"></i><strong> {student.name},</strong><span id="alert-message">You should change window {termintate.time} time, please stop move otherwise your exam should cancel.</span>
+            <button type="button" class="close"  aria-label="Close" onclick="closeAlert();">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </section>
+</body>
+<script src="./database/assets.js"></script>
+<script>
+let sidenav = 0;
+let termination = 0;
+let temp;
+let currentPaper;
+let currentCategory=1;
+function user(){
+    window.addEventListener("blur", () => {
+        if(new URL(window.location['href']).hostname!=''){
+            showAlert(`You should change window ${termination+1} time, please stop move otherwise your exam should cancel.`);
+            termination++;
+        }
+    });
+    window.addEventListener("focus", () => {
+        if(new URL(window.location['href']).hostname!=''){
+            if(termination>3 && termination<5){
+                alert("Your exam is cancelled for unwanted movement!");
+            }
+        }
+    });
+    currentPaper = geography;
+    setPapersUrl();
+    setPaperData();
+    setTimeout(()=>{
+        reorderSection();
+        questionList();
+        populate(1);
+    },1000);
+    // alert(deviceCheck());
+}
+function questionList(){
+    temp = '';
+    let start,end;
+    if(currentPaper.section[0][0]==quiz.questions.length-1){
+        start = 0;
+        end = quiz.questions.length;
+    }else{
+        start = currentCategory==1?0:currentPaper.section[currentCategory-2][0];
+        end = currentPaper.section[currentCategory-1][0];
+    }
+    for(let i=start; i<end; i++){ 
+        if(solveList[i][2]!=null){
+            temp += `<div class="question-item btn bg-green" onclick="populate(${i+1})">${i+1}</div>`;
+        }else{
+            if(solveList[i][1]!=null){
+                temp += `<div class="question-item btn bg-red" onclick="populate(${i+1})">${i+1}</div>`;
+            }else{
+                temp += `<div class="question-item btn bg-white" onclick="populate(${i+1})">${i+1}</div>`;
+            }
+        }
+    }
+    document.querySelector(".question-list").innerHTML = temp;
+}
+function toggleSidenav(){
+    if(sidenav==0){
+        if(deviceCheck()!=2){
+            document.querySelector(".right-component").style.width = "0%";
+            document.getElementById("jsStyle").innerHTML += `.component .right-component .sidenav-toggler{position: absolute;top: 58%;left: 85%;}`; 
+        }else{
+            document.querySelector(".right-component").style.width = "0%";
+            document.querySelector(".left-component").style.width = "99%";
+            document.getElementById("jsStyle").innerHTML += `.component .right-component .sidenav-toggler{position: absolute;top: 58%;left: 98%;}`; 
+        }
+        document.querySelector(".sidenav-toggler").innerHTML = '<i class="fa fa-arrow-left"></i>';
+        sidenav++;
+    }else{
+        if(deviceCheck()!=2){
+            document.querySelector(".right-component").style.width = "70%";
+            document.getElementById("jsStyle").innerHTML += `.component .right-component .sidenav-toggler{position: absolute;top: 58%;left: -10%;}`; 
+        }else{
+            document.querySelector(".right-component").style.width = "20%";
+            document.querySelector(".left-component").style.width = "80%";
+            document.getElementById("jsStyle").innerHTML += `.component .right-component .sidenav-toggler{position: absolute;top: 58%;left: 78%;}`; 
+        }
+        document.querySelector(".sidenav-toggler").innerHTML = '<i class="fa fa-arrow-right"></i>';
+        sidenav--;
+    }
+}
+function showAlert(messsge){
+    document.querySelector(".alert").style.display = "block";
+    document.getElementById("alert-message").innerHTML = messsge;
+    setTimeout(()=>{
+        document.querySelector(".alert").style.top = "8%";
+    },100);
+}
+function closeAlert(){
+    document.querySelector(".alert").style.top = "-8%";
+    setTimeout(()=>{
+        document.querySelector(".alert").style.display = "none";
+    },1000);
+}
+function printOptionSheet(choices,number){
+    temp = '';
+    let a;
+    for(let i=0; i<choices.length; i++){
+        if(solveList[number][2]==choices[i] && solveList[number][2]!=null){
+            a = "checked='true'";
+        }else{
+            a = '';
+        }
+        temp += `
+        <div class="form-group option">
+            <input type="radio" id="option${i+1}" name="option" value="${choices[i]}" onclick="guess(${i+1});" ${a==''?a:a} />
+            <label for="option${i+1}" id="choice${i+1}">${choices[i]}</label>
+        </div>`;
+    }
+    document.querySelector('.options').innerHTML = temp;
+}
+function setPapersUrl(){
+    for(let i=0; i<paper.length; i++){
+        root.innerHTML += `<script src="./database/${paper[i]}.min.js" crossorigin="anonymous"></script>`;
+    }
+}
+function setPaperData(){
+    setTimeout(()=>{
+        questions1 = currentPaper.set1;
+        questions2 = currentPaper.set2;
+        questions3 = currentPaper.set3;  
+        root.innerHTML = root.innerHTML.replaceAll("{paper.name}",currentPaper.name);
+        root.innerHTML = root.innerHTML.replaceAll("{question.fullmarks}",currentPaper.fullmarks);
+        randomPaperChoose();
+    },1000);
+}
+function displayCategores(){
+    temp = '';
+    for(let i=0; i<currentPaper.section.length; i++){
+        temp += `<span class="btn" id="category${i+1}" onclick="swapSection(${i+1});">category-${i+1}</span>`;
+    }
+    document.getElementById('category-list').innerHTML = temp;
+    swapSection(1);
+}
+function swapSection(id){
+    for(let i=0; i<currentPaper.section.length; i++){
+        document.getElementById('category'+(i+1)).classList.remove("active");
+    }
+    document.getElementById('category'+id).classList.add("active");
+    currentCategory = id;
+    let priviusLisit = (currentCategory<=1?0:currentPaper.section[currentCategory-2][0]);
+    document.getElementById('side-cateno').textContent = `Category ${id}, (${currentPaper.section[currentCategory-1][0]-priviusLisit}/${quiz.questions.length})`;
+    document.getElementById('positive-marks').textContent = currentPaper.section[currentCategory-1][2];
+    document.getElementById('negative-marks').textContent = currentPaper.section[currentCategory-1][3]>0?'-'+currentPaper.section[currentCategory-1][3]:currentPaper.section[currentCategory-1][3];
+    questionList();
+}
+function deviceCheck(){
+    const details = navigator.userAgent;
+	let regexp = /android|iphone|kindle|ipad/i;
+    let regexc = /windows|linux|macintosh/i;
+	let isMobileDevice = regexp.test(details);
+    let isComputer = regexc.test(details);
+	if(isMobileDevice){ 
+        return 0; 
+    }else{
+        if(isComputer){
+            return 2;
+        }
+        return 1;
+    }
+}
+</script>
+<script>
+let modequestion = 0;
+let currentQuestionNumber = 0;
+let quiz;
+let solveList = [];
+function Question(text, choices, answer){
+  this.text = text;
+  this.choices = choices;
+  this.answer = answer;
+}
+Question.prototype.isCorrectAnswer = function(choice){
+  return this.answer === choice;
+}
+function Quiz(questions){
+  this.score = 0;
+  this.questions = questions;
+  this.questionIndex = 0;
+}
+Quiz.prototype.getQuestionIndex = function(){
+  return this.questions[this.questionIndex];
+}
+Quiz.prototype.guess = function(answer){
+  if(this.getQuestionIndex().isCorrectAnswer(answer)){
+    this.score++;
+  }
+  this.questionIndex++;
+}
+Quiz.prototype.isEnded = function(){
+  return this.questionIndex === this.questions.length;
+}
+function populate(number){
+  // if(quiz.isEnded()){
+  //   showScores();
+  // }else{
+    getNewQuestion(number-1);
+  // }
+};
+function getNewQuestion(number){
+  var element = document.querySelector(".question");
+  let QuestionIndex = quiz.questions[number];
+  element.innerHTML = QuestionIndex.text;
+  printOptionSheet(QuestionIndex.choices,number);
+  solveList[number][1] = quiz.questions[number]; 
+  showProgress(number);
+  questionList();
+}
+function guess(id){
+  let answer = document.getElementById("option"+id).value;
+  if(solveList.length>0 && quiz.questions.length>0){
+    solveList[currentQuestionNumber-1][2] = answer;
+  }else{
+    for(let i=0; i<quiz.questions.length; i++){
+      solveList[i] = [i+1,null,null];
+    }
+    guess(id);
+  }
+  questionList();
+}
+function showProgress(number){
+  currentQuestionNumber = number+1;
+  var element = document.getElementById("qno");
+  element.innerHTML = currentQuestionNumber;
+  if(number==quiz.questions.length-1){
+    document.getElementById("finish").style.display = "block";
+  }else{
+    document.getElementById("finish").style.display = "none";
+  }
+};
+function showScores(){
+  var gameOverHTML = "<h1 onclick='anssheet();'>Result</h1>";
+  gameOverHTML += "<h2 id='score'> Your scores: " + quiz.score + "</h2> <br><h4 id='puma'>Totale question: " + quiz.questions.length + "<br>Right answer: " + quiz.score + "<br>Your parsentage: " + quiz.score/quiz.questions.length*100 + "%</h4><br><p id='parform'>If your scores > 75% <br>then you are able,<br> If your scores < 75%<br> then you are not able<br>but <b><i>Never Giveup</i></b></p><br><button id='refresh'value='restart'onclick='restart();'>Restart</button>";
+  var element = document.getElementById("quiz");
+  element.innerHTML = gameOverHTML;
+  alert("Congratulation we calculate your scores..");
+};
+function randomPaperChoose(){
+  let k = Math.floor((Math.random()*(4-(1))+(1)));
+  if(k == 1){
+    quiz = new Quiz(questions3);
+    modequestion = 1;
+  }else if(k == 2){
+    quiz = new Quiz(questions2);
+    modequestion = 2;
+  }else{
+    quiz = new Quiz(questions3);
+    modequestion = 3;
+  }
+  for(let i=0; i<quiz.questions.length; i++){
+    solveList[i] = [i+1,null,null];
+  }
+}
+// populate(); //it is responsible for strat
+function anssheet(){
+	quizbox = document.getElementById("quiz");
+  if(modequestion == 1){
+	  quizbox.innerHTML = "<h1 onclick='showScores();'> WHITE LOTUS Quiz<br>Answer Sheet</h1><br><p class='anssheet'>1)b, 2)c, 3)b, 4)a, 5)c, 6)a, 7)c, 8)b, 9)a, 10)b, 11)d, 12)a, 13)b, 14)c, 15)c, 16)b, 17)b, 18)b, 19)b, 20)c, 21)b, 22)d, 23)b, 24)c, 25)c, 26)a, 27)a, 28)c, 29)a, 30)c, 31)d, 32)c, 33)c, 34)b, 35)a, 36)b, 37)c, 38)b, 39)c, 40)c, 41)b, 42)a, 43)c, 44)d, 45)a, 46)a, 47)d, 48)c, 49)b, 50)c</p>";
+  }else if(modequestion == 2){
+	  quizbox.innerHTML = "<h1 onclick='showScores();'> WHITE LOTUS Quiz<br>Answer Sheet</h1><br><p class='anssheet'>1)b, 2)c, 3)b, 4)a, 5)c, 6)a, 7)c, 8)b, 9)a, 10)b, 11)d, 12)a, 13)b, 14)c, 15)c, 16)b, 17)b, 18)b, 19)b, 20)c, 21)b, 22)d, 23)b, 24)c, 25)c, 26)a, 27)a, 28)c, 29)a, 30)c, 31)d, 32)c, 33)c, 34)b, 35)a, 36)b, 37)c, 38)b, 39)c, 40)c, 41)b, 42)a, 43)c, 44)d, 45)a, 46)a, 47)d, 48)c, 49)b, 50)c</p>";
+  }else{
+    quizbox.innerHTML = "<h1 onclick='showScores();'> WHITE LOTUS Quiz<br>Answer Sheet</h1><br><p class='anssheet'>1)b, 2)c, 3)b, 4)a, 5)c, 6)a, 7)c, 8)b, 9)a, 10)b, 11)d, 12)a, 13)b, 14)c, 15)c, 16)b, 17)b, 18)b, 19)b, 20)c, 21)b, 22)d, 23)b, 24)c, 25)c, 26)a, 27)a, 28)c, 29)a, 30)c, 31)d, 32)c, 33)c, 34)b, 35)a, 36)b, 37)c, 38)b, 39)c, 40)c, 41)b, 42)a, 43)c, 44)d, 45)a, 46)a, 47)d, 48)c, 49)b, 50)c</p>";
+  }
+}
+function restart(){
+	quizbox = document.getElementById("quiz");
+	quizbox.innerHTML = "<h1 onclick='anssheet();'> WHITE LOTUS Quiz<br>(Sub- Green Enviorment) </h1><hr style='margin-bottom: 20px'><p id='question'><span class='aler'>System fail, please start manually!</span><br>This device not able to load quiz.vul.js file</p><div class='button'><button id='bt0'> <span id='choice0'> </span> </button><button id='bt1'> <span id='choice1'> </span> </button><button id='bt2'> <span id='choice2'> </span> </button><button id='bt3'> <span id='choice3'> </span> </button></div><hr style='margin-top: 50px'><footer><p id='progress'> Question 0 of 00</p></footer>";
+	requestion();
+}
+function requestion(){
+	var element = document.getElementById("question");
+  element.innerHTML = quiz.getQuestionIndex().text;
+  var choices = quiz.getQuestionIndex().choices;
+  for(var i = 0; i < choices.length; i++){
+    document.getElementById("choice" + i).innerHTML = choices[i];
+    guess("bt" + i, choices[i]);
+  }
+  showProgress();
+}
+function reorderSection(){
+  if(currentPaper.section[0][0]!=0){
+    for(let i=0; i<currentPaper.section.length-1; i++){
+      if(currentPaper.section[i][0] > currentPaper.section[i+1][0]){
+        temp = currentPaper.section[i];
+        currentPaper.section[i] = currentPaper.section[i+1];
+        currentPaper.section[i+1] = temp;
+      }
+    }
+    if(currentPaper.section[currentPaper.section.length-1][0] < quiz.questions.length){
+      currentPaper.section.length += 1;
+      currentPaper.section[currentPaper.section.length-1] = [(quiz.questions.length-currentPaper.section[currentPaper.section.length-2][0])+currentPaper.section[currentPaper.section.length-2][0],quiz.quizTimeRemainInSecond(quiz.quizTimeRemain()),Math.floor(quiz.quizMarksRemain()/(quiz.questions.length-currentPaper.section[currentPaper.section.length-2][0])),0];
+    }
+  }else{
+    currentPaper.section[0][0] = quiz.questions.length;
+
+  }
+  if(quiz.quizMarksRemain()<0 || (currentPaper.section[0][2]>currentPaper.fullmarks)){
+    showAlert("Check the marks distribution, it should be over marks given..");
+  }
+  displayCategores();
+}
+Quiz.prototype.quizTimeRange = function(){
+  temp = (new Date().getMonth()+1)+' '+new Date().getDate()+' '+new Date().getFullYear();
+  let hours = new Date(`${temp}, ${currentPaper.time}`).getHours();
+  let minutes = new Date(`${temp}, ${currentPaper.time}`).getMinutes();
+  let second = new Date(`${temp}, ${currentPaper.time}`).getSeconds();
+  return [hours, minutes, second];
+}
+Quiz.prototype.quizeTimeOccupied = function(){
+  let occupiedTime=0;
+  for(let i=0; i<currentPaper.section.length-1; i++){
+    occupiedTime += (currentPaper.section[i][0] * currentPaper.section[i][1]);
+  }
+  let hours = Math.floor(occupiedTime/3600);
+  let remainingSeconds = occupiedTime % 3600;
+  let minutes = Math.floor(remainingSeconds/60);
+  remainingSeconds = remainingSeconds % 60;
+  return [hours, minutes, remainingSeconds];
+}
+Quiz.prototype.quizTimeRemain = function(){
+  let bigTime = quiz.quizTimeRange();
+  let smallTime = quiz.quizeTimeOccupied();
+  return [bigTime[0]-smallTime[0], bigTime[1]-smallTime[1], bigTime[2]-smallTime[2]];
+}
+Quiz.prototype.quizTimeRemainInSecond = function(time){
+  return time[0]*3600 + time[1]*60 + time[2];
+}
+Quiz.prototype.quizMarksOccupied = function(){
+  let marks=0;
+  for(let i=0; i<currentPaper.section.length-1; i++){
+    if(i==0){
+      marks += currentPaper.section[i][0]*currentPaper.section[i][2];
+    }else{
+      marks += (currentPaper.section[i][0]-currentPaper.section[i-1][0])*currentPaper.section[i][2];
+    }
+  }
+  return marks;
+}
+Quiz.prototype.quizMarksRemain = function(){
+  return currentPaper.fullmarks - quiz.quizMarksOccupied();
+}
+</script>
+<script>
+const geography = {
+    name: "Geography Paper for GDPA",
+    time: "00:30:00",
+    fullmarks: 70,
+    section: [
+        [15,30,4,3],
+        [7,14,1,0.25],
+        // [0,14,1,0.25]
+    ],
+    set1: [
+        new Question("What is the name of our home planet?", ["Mars", "Earth", "USA", "Moon"], "Earth"), 
+        new Question("What is the name of our galaxy?", ["Andromeda", "Samsung", "Milkyway", "Solar-system"], "Milkyway"),
+        new Question("How many constellation are founded before 2020?", ["81", "85", "89", "908"], "89"),
+        new Question("What is the probability that you will get full marks in this test?", ["0%", "25%", "50%", "100%"], "50%"),
+    ],
+    set2: [ 
+        new Question("WHAT IS HUMIDITY ?", ["AMOUNT OF STEAM", "AMOUNT OF AIR IN WATER", "AMOUNT OF MOISTURE IN AIR", "ALL OF THESE"], "AMOUNT OF MOISTURE IN AIR"),
+        new Question("RAINFALL IS USUALY MEASURED IN?", ["mm", "cm", "litre/mm3", "ml/cm3"], "mm"),
+        new Question("IN WHICH HEAT ZONE “4 O' CLOCK RAIN“ OCCURS?", ["TROPICAL ZONE", "NORTH TEMPERATE ZONE", "SOUTH TEMPERATE ZONE", "NORTH ARTIC ZONE"], "TROPICAL ZONE"),
+        new Question("THE AVERAGE CLIMATIC CONDITION OF THE WORLD IS___________", ["GETTING COLD", "GETTING WARM", "IS STABLE", "ALL OF ABOVE"], "GETTING WARM"),
+        new Question("Which one of the following cause global warming?", ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"], "Carbon dioxide"),
+        new Question("How many percent of carbon dioxide increased in the atmosphere since pre-industrial times?", ["About 10%", "About 20%", "About 30%", "About 40%"], "About 30%"),
+        new Question("What is the full form of UNFCC with respect to global warming convention?", ["United Nations Framework Convention on Climate Change", "United Nations Federation Convention on Climate Change", "United Nations Framework Center on Climate Change", "United Nations Federation Center on Climate Change"], "United Nations Framework Convention on Climate Change"),
+        new Question("Who measures the global warming rate?", ["Astrologers", "Physicist", "Philosopher", "Climatologist"], "Climatologist"),
+        new Question("Which one of the following result takes place due to global warming?", ["Maintaining steady temperature", "Changes in the rainfall", "Pleasant environment", "Causing less pollution"], "Changes in the rainfall"),
+        new Question("Which one of the following cause global warming?", ["Radiative forcing", "Oxygen", "Earth gravitation force", "Centripetal force"], "Radiative forcing"),
+        new Question("How human activity has influenced global warming?", ["By planting more trees", "By causing changing in gravitational force", "By changing the radiative balance governing the Earth", "By protecting environment"], "By changing the radiative balance governing the Earth"),
+        new Question("Which one of the following is the anthropogenic radiative forcing of climate?", ["Aerosols", "Cement", "Paper", "Glass"], "Aerosols"),
+        new Question("Which date is celebrated as world nature conservation day?", ["10 August", "28 July", "17 June", "21 April"], "28 July"),
+        new Question("Which one of the following land use causes global warming?", ["Increase in the fertility of soil", "Surface reflectance", "Forestation", "Adopting organic farming"], "Surface reflectance"),
+        new Question("Soot only warm Earth's climate system", ["True", "False", "All of these", "None of These"], "False"),
+        new Question("13 october 2003 globaly remember as?", ["Tsunami", "Earth quack", "Solar flair", "Full moon"], "Solar flair"),
+        new Question("What is the probability that you will get full marks in this test?", ["0%", "25%", "50%", "100%"], "50%"),
+    ],
+    set3: [ 
+        new Question("What is the formula of Carbon dioxide?", ["CO", "CO3", "CO2", "2COCH3"], "CO2"),
+        new Question("What is the first step in waste management?", ["Waste disposal", "Waste separation", "Waste collection", "All of these"], "Waste separation"),
+        new Question("____________ is the first 'R' in the Three R's", ["Reduce", "Reuse", "Recycle", "Refuse"], "Reduce"),
+        new Question("World Environment day in", ["10 August", "5 June", "7 December", "21 September"], "5 June"),
+        new Question("Which is an example for non-biodegradable waste?", ["Paper cup", "Plastic plate", "Coconut shell", "Biology book"], "Plastic plate"),
+        new Question("What is hibernation?", ["midday sleep", "Winter sleep", "Summer sleep", "Some thing related to nation"], "Winter sleep"),
+        new Question("The highest nonzero dose at which no toxic effect is observed in a study on animals is called", ["LD50", "NOAEL", "LOAEL", "NOEFF"], "NOAEL"),
+        new Question("Project Tiger was started in:", ["1973", "1975", "1976", "1977"], "1973"),
+        new Question("What is water vapor?", ["It is the gaseous phase of water", "It is a rain droplet", "Water vapor is the cloud droplet", "All of these"], "It is the gaseous phase of water"),
+        new Question("Which of the country has the maximum numbers of the tube wells in the world?", ["China", "America", "Japan", "India"], "India"),
+        new Question("How human activity has influenced global warming?", ["By planting more trees", "By causing changing in gravitational force", "By changing the radiative balance governing the Earth", "By protecting environment"], "By changing the radiative balance governing the Earth"),
+        new Question("When is world wildlife week observed?", ["First week of September", "Last week of September", "Last week of October", "First week of October"], "First week of October"),
+        new Question("Which of the following has a maximum speed?", ["Air", "Sound", "Light", "Salary"], "Light"),
+        new Question("The salinaization can be defind as-", ["Accumulation of salts in the body", "Accumulation of salts in water", "Accumulation of salts in animals", "Accumulation of salts in soil"], "Accumulation of salts in soil"),
+        new Question("'Care and share' policy of the forest applies to", ["Tribal people", "Villagers", "JFMCs", "Forest communities"], "JFMCs"),
+        new Question("Which of the following is the cause of soil pollution?", ["Ozone", "Aerosol", "Acid rain", "None of these"], "Acid rain"),
+        new Question("Which of the following sequence represent a correct order of soil particles arrenged in terms of particle size form smaller to largest?", ["Clay,Silt,Sand,Graval", "Silt,Clay,Graval,Sand", "Graval,Sand,Silt,Clay", "Graval,Silt,Clay,Sand"], "Clay,Silt,Sand,Graval"),
+        new Question("Which one of the following cause global warming?", ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"], "Carbon dioxide"),
+        new Question("At what time of the day relative humidity in the enviorment is at minimum?", ["When the air temperature is lowest", "Before sunrise", "When we sleep", "When the air temperature is higher"], "When the air temperature is higher"),
+        new Question("Which of the following is a renewable source of energy?", ["Coal", "Uranium", "Wind", "Video game"], "Wind"),
+        new Question("Paper is made up of-", ["Polythene and cotton", "Starch and cellulose", "Grass and Bamboo", "None of the above"], "Grass and Bamboo"),
+        new Question("Who measures the global warming rate?", ["Astrologers", "Physicist", "Philosopher", "Climatologist"], "Climatologist"),
+        new Question("Sugar is form of____________", ["Carbohydrate", "Fat", "Protein", "Water"], "Carbohydrate"),
+        new Question("Soot only warm Earth's climate system", ["True", "False", "All of these", "None of These"], "False"),
+        new Question("Ozone layer present in-", ["Mesosphere", "Thermosphere", "Stratosphere", "Kidney"], "Stratosphere"),
+        new Question("Which of the following gas destroys the chlorophyll present in the plant leaves", ["SO3", "H2S", "SO2", "CO2"], "SO2"),
+        new Question("Which of the following is non-luminous?", ["Sun", "Star", "Moon", "Girls"], "Moon"),
+        new Question("In which heat zone “4 O' clock rain“ occure", ["TROPICAL ZONE", "NORTH TEMPERATE ZONE", "SOUTH TEMPERATE ZONE", "NORTH ARTIC ZONE"], "ROPICAL ZONE"),
+        new Question("Which one of the following land use causes global warming?", ["Increase in the fertility of soil", "Surface reflectance", "Forestation", "Adopting organic farming"], "Surface reflectance"),
+        new Question("Which one of the following an important heat trapping gas?", ["Nitrogen", "Carbon monoxide", "Carbon dioxide", "Hydrogen"], "Carbon dioxide"),
+        new Question("How many cubic kilometers of land ice decrease in antartica since 2002?", ["100", "4000", "500", "1000"], "100"),
+        new Question("Which date is celebrated as world nature conservation day?", ["10 August", "28 July", "17 June", "21 April"], "28 July"),
+        new Question("13 october 2003 globaly remember as?", ["Tsunami", "Earth quack", "Solar flair", "Full moon"], "Solar flair"),
+        new Question("What is the probability that you will get full marks in this test?", ["0%", "25%", "50%", "100%"], "50%"),
+    ],
+};
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
